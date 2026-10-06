@@ -1,0 +1,4 @@
+# Main PD + fixed-lambda L-BFGS run for Si.
+dataset_config = "configs/datasets/si.toml"
+method = "pd"
+output_dir = "results/si/pd"

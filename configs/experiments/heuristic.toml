@@ -1,0 +1,7 @@
+dataset_config = "configs/datasets/licl.toml"
+method = "heuristic"
+output_dir = "results/heuristic"
+
+[heuristic]
+alpha = "REQUIRED"
+source_note = "Set alpha to the baseline energy fraction in the normalized static objective."

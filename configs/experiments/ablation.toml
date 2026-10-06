@@ -1,0 +1,13 @@
+dataset_config = "configs/datasets/licl.toml"
+method = "pd"
+output_dir = "results/licl/ablation"
+
+[ablation]
+force_batches = [1140, 4580, 11400]
+primal_lrs = [1e-5, 1e-4, 1e-3]
+dual_lrs = [1e-3, 1e-2, 1e-1]
+# Select the learning rates to scale and their reference batch.
+batch_scaling = "REQUIRED"
+reference_batch_size_F = "REQUIRED"
+reference_primal_lr = "REQUIRED"
+reference_dual_lr = "REQUIRED"

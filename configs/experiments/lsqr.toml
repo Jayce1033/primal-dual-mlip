@@ -1,0 +1,4 @@
+# run_scan computes per-alpha weights. A single run requires both weights.
+dataset_config = "configs/datasets/licl.toml"
+method = "lsqr"
+output_dir = "results/lsqr"

@@ -1,0 +1,85 @@
+# Generated training, analysis, and simulation products.
+/results/*
+!/results/README.md
+
+# Local environment variables and credentials.
+.env
+.env.*
+.envrc
+.direnv/
+.secrets/
+secrets/
+.aws/
+.azure/
+.ssh/
+.gnupg/
+.kube/
+**/.config/gcloud/
+.netrc
+.npmrc
+.pypirc
+.git-credentials
+credentials.json
+credentials.toml
+secrets.json
+secrets.toml
+service-account*.json
+id_rsa
+id_dsa
+id_ecdsa
+id_ed25519
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+*.keystore
+
+# Machine-local Julia and Python environments and caches.
+.julia/
+LocalPreferences.toml
+.venv/
+venv/
+env/
+ENV/
+.conda/
+__pypackages__/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+.coverage.*
+htmlcov/
+*.jl.cov
+*.jl.mem
+
+# Editor settings, operating-system metadata, logs, and temporary backups.
+.vscode/
+.idea/
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+*.log
+*.pid
+.python_history
+.julia_history
+repl_history.jl
+.bash_history
+.zsh_history
+*.swp
+*.swo
+*~
+*.bak
+*.orig
+*.rej
+
+# Local maintainer notes and release backups.
+/maintainer-notes/
+/*-maintainer-notes/
+
+# Raw data, split indices, configuration JSON/TOML, and the dependency lockfile
+# are intentionally tracked. Store checkpoints and plots under results/.

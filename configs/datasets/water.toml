@@ -1,0 +1,104 @@
+# Dataset defaults. Set REQUIRED fields in the experiment configuration.
+seed = 1234
+output_dir = "results/water"
+
+[dataset]
+name = "water"
+file = "data/water/dataset_1593.xyz"
+split_file = "data/splits/water_seed42.toml"
+split_seed = 42
+expected_train = 1274
+expected_test = 319
+
+[dataset.train_opts]
+energy_key = "TotEnergy"
+force_key = "force"
+
+[dataset.test_opts]
+energy_key = "TotEnergy"
+force_key = "force"
+
+[units]
+confirmed = true
+energy = "eV"
+force = "eV/angstrom"
+length = "angstrom"
+source_note = "Input units confirmed by the dataset provider; no numerical conversion is applied."
+
+[model]
+elements = ["O", "H"]
+order = 3
+totaldegree = 15
+rcut = 5.5
+
+[initialization]
+mode = "zeros"
+
+[runtime]
+blas_threads = 1
+
+[pd]
+primal_lr = 2e-5
+dual_lr = 5e-2
+initial_learning_rate = 2e-5
+max_iter = 20000
+epsilon_F = 1e-5
+lambda_F_0 = 0.0
+lambda_F_max = 1e4
+dual_update_freq = 50
+# Set a positive interval and a factor below 1 to enable decay.
+lr_decay_step = 0
+lr_decay_factor = 1.0
+# Energy observations; one per configuration.
+batch_size_E = 254
+# Force scalar components, sampled independently. Use "all" for full data.
+# round(batch_size_E * training_force_components / training_energy_observations)
+# round(254 * 733824 / 1274)
+batch_size_F = 146304
+eval_every = 50
+warmup_steps = 1000
+verbose = true
+tol = 1e-6
+patience = 50
+
+[refine]
+enabled = true
+max_iter = 2000
+gamma = 1e-8
+g_tol = 1e-4
+f_reltol = 0.0
+eval_every = 10
+print_every = 50
+verbose = true
+
+[static]
+alpha = "REQUIRED"
+gamma = 1e-8
+max_iter = 10000
+f_reltol = 1e-6
+g_tol = 1e-4
+eval_every = 10
+print_every = 50
+verbose = true
+
+[lsqr]
+damp = 1e-2
+atol = 1e-6
+smoothness = 4
+conlim = 1e8
+maxiter = 100000
+verbose = false
+weight_E = "REQUIRED"
+weight_F = "REQUIRED"
+
+[scan]
+n = 9
+alpha_min = 0.001
+alpha_max = 0.999
+weight_reference_E = 30.0
+weight_reference_F = 1.0
+knee_alphas = "REQUIRED"
+
+[heuristic]
+alpha = "REQUIRED"
+source_note = "Set alpha to the baseline energy fraction in the normalized static objective."

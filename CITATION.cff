@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying manuscript when using this research software."
+type: software
+title: "primal-dual-mlip: Force-constrained fitting of atomic cluster expansion models"
+authors:
+  - family-names: Wang
+    given-names: Chenyu
+  - family-names: Wang
+    given-names: Yangshuai
+  - family-names: Zhang
+    given-names: Lei
+abstract: "Research code accompanying the manuscript From Energy--Force Weighting to Primal--Dual Optimization of Machine-Learned Interatomic Potentials."
+keywords:
+  - atomic cluster expansion
+  - interatomic potentials
+  - primal-dual optimization
+  - energy-force fitting

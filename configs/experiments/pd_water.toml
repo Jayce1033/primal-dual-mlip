@@ -1,0 +1,4 @@
+# Main PD + fixed-lambda L-BFGS run for water.
+dataset_config = "configs/datasets/water.toml"
+method = "pd"
+output_dir = "results/water/pd"

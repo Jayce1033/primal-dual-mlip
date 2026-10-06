@@ -1,0 +1,4 @@
+# Select --dataset licl|water|si. A single run also requires static.alpha.
+dataset_config = "configs/datasets/licl.toml"
+method = "static"
+output_dir = "results/static"
